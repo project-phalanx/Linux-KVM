@@ -5,6 +5,7 @@
 
 ## Purpose
 * This repository provides scripts to setup KVM guests on Clear Linux KVM host
+* Create a template to easily deploy an optimized KVM guest
 
 ## VM Template
 ### Naming Convention
