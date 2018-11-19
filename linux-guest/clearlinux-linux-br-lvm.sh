@@ -1,0 +1,2 @@
+#! /bin/bash
+exec /usr/bin/qemu-system-x86_64 -enable-kvm -name linux-vm -bios OVMF.fd -smp cpus=2,sockets=1,cores=2,threads=1 -cpu host -machine q35 -m 1024 -vga qxl -vnc :1 -nographic -drive file=/dev/mapper/volname,if=virtio,aio=threads,format=raw,cache=writethrough -netdev tap,helper=/usr/libexec/qemu-bridge-helper,id=hn0 -device virtio-net-pci,netdev=hn0,id=vmnic -device virtio-rng-pci -debugcon file:debug.log -global isa-debugcon.iobase=0x402 $@
