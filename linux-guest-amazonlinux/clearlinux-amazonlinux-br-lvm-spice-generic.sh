@@ -1,0 +1,2 @@
+#! /bin/bash
+exec /usr/bin/qemu-system-x86_64 -enable-kvm -name amazon-linux -smp cpus=2,sockets=1,cores=2,threads=1 -cpu host -machine q35,accel=kvm -m 1024 -vga qxl -spice port=5901,addr=0.0.0.0,disable-ticketing -drive file=/dev/vg_kvm/amazon-linux,if=virtio,aio=native,format=raw,cache=none -netdev tap,helper=/usr/libexec/qemu-bridge-helper,id=net0 -device virtio-net-pci,netdev=net0,id=vmnic,mac=00:16:3e:3c:4b:ec -device intel-iommu -device virtio-rng-pci -debugcon file:debug.log -global isa-debugcon.iobase=0x402 $@
