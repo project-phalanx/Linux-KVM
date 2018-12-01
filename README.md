@@ -5,9 +5,9 @@
   * Small foot print with extreme performance
 
 ## Concept
-* Aiming to replace virtual machine host from power hungry VMware ESXi by light weight Linux KVM
+* Aiming to replace virtual machine host from power hungry VMware ESXi to light weight Linux KVM
 * This repository provides scripts to setup KVM guests on Clear Linux KVM host
-  * Very light weight and optimized to modern hardware
+  * Very light weight and optimized for modern hardware (Sandy Bridge or newer)
   * Just enough functional to be a Virtual Machine Hypervisor
 * Do NOT use Graphical User Interface (for KVM host) to reduce resource usage. Do NOT use Virt Manager.
 * Create a template to easily deploy an optimized KVM guest
@@ -26,7 +26,7 @@
 
 ## VM Template
 ### Naming Convention
-{host_os}-{guest_os_type}-{machine_type}-{bridge_type}-{disk_type}-{special_function}.sh
+{host_os}-{guest_os_type}-{machine_type}-{bridge_type}-{disk_type}-{remote_connection}-{special_function}.sh
 
 ### User Configuration
 * A user may need to modify the script to adjust to your environment
